@@ -1,0 +1,43 @@
+/*
+ * Globals
+ */
+
+
+
+
+/*
+ * Base structure
+ */
+
+
+.animate{
+/*  text-shadow: 0 1px 3px rgba(0,0,0,.5);*/  
+  text-align:left;
+  margin: 10px 0 0 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+  animation: type 4s steps(60, end); 
+  font-family: "Lucida Console", "Lucida Sans Typewriter", "monaco", "Bitstream Vera Sans Mono", "monospace";  
+  font-style: normal; 
+  font-variant: normal; 
+  font-weight: 700;
+}
+
+
+
+
+.spananimate{
+  animation: blink 1s infinite;
+}
+
+@keyframes type{ 
+  from { width: 0; } 
+} 
+
+@keyframes blink{
+  to{opacity: .0;}
+}
+
+
+
