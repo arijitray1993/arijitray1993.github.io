@@ -125,14 +125,14 @@ a:focus {
 }
 
 .lead{
-  font-family: 'Open Sans';
+  font-family: 'Open Sans', sans-serif;
   font-size: 20px;
   font-weight: 390;
 }
 
 .lead-small{
   @extend .lead;
-  font-family: 'Open Sans';
+  font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   font-weight: 410;
 }
