@@ -11,7 +11,7 @@
   <meta charset="utf-8" />
     
     <div class="container-fluid" >
-        <div class="jumbotron" style="background-color: white;margin-bottom:0;"">
+        <div class="jumbotron" style="background-color: white;margin-bottom:0; text-align: center;">
             <h1 class="display">PERSUADE: <u>Pers</u>uasive <u>U</u>ser-specific <u>Ad</u> (Content) <u>E</u>nhancement </h1>
             <p class="lead" style="text-align: center;"><a href="https://cs-people.bu.edu/array">Arijit Ray</a>,
                 <a href="https://ksikka.com/">Karan Sikka</a>, 
@@ -38,17 +38,21 @@
 
                 <h3>Why is this useful?</h3>
                 <p class="lead">
-                    Social media puts us in a positive feedback loop of only seeing things we already care about or like.
-                    On the contrary, this work can help make a user also likely check out content about stuff they don't care about (yet) in a manner that appeals to them. 
-                    This is also good for business - one can potentially reach a broader audience if they tweak their content to appeal to a variety of different user-bases.  
+                    Social media puts us in a positive feedback loop of only seeing things we already care about. 
+                    Can we somehow encourage users to also check out issues they may not care about yet? 
+                    This work can help make a user also likely check out content about topics they don't care about (yet) in a manner that appeals to them. 
+                    This is also good for business - one can potentially reach a broader audience if they can automatically tweak their content to appeal to a variety of different user-bases.  
                 </p>
 
                 <h2>What we do? Train a GAN to apply an "intent" on an arbitrary image</h2>
+                <div class="row" style="text-align: center;">
+                    <img src="persuade_teaser.png">
+                </div>
                 <p class="lead">We train a <a href="https://proceedings.neurips.cc/paper/2014/file/5ca3e9b122f61f8f06494c97b1afccf3-Paper.pdf">Generative Adversarial Network (GAN)</a> 
-                    to apply the "attribute"/"intent" of climate change
-                    on an arbitrary hiking trail image. 
+                    to disentangle the concept of "intent" (eg, reverse climate change) and "content" (eg, imagery of a factory polluting the air). Then we can apply the "attribute"/"intent" of climate change
+                    on an image with a different content, eg, a specific hiking trail. 
                 </p>
-                <p class="lead">Here is how our GAN looks like:</p>
+                <p class="lead">Here is how the discriminator of our GAN looks like:</p>
             </div>
             <div class="row" style="text-align: center;">
                 <div class="col" style="align-items: center;"><img src="discriminator_design.png" width="65%"></div>                
@@ -72,16 +76,16 @@
                 <h2>Results</h2>
                 <p class='lead'>
                     Here are some preliminary results on how our results look. The top image is the original image and the bottom 
-                    image is style-transferred (generated) to convey the intent of climate change based on the original image. 
+                    image is style-transferred (generated) to convey the "effect of climate change" on the original image. 
                     
                 </p>
-                <p>
-                    <img src="qual_result_globalwarming.png" width=80%>
-                </p>
+                <div class="row" style="text-align: center;">
+                    <img src="qual_result_globalwarming.png" width=60%>
+                </div>
                 <p class="lead">
                     Note how the leaves/grass look dried out and the there is an overall sepia tone to the sky.
                     None of this was explicitly taught or handcrafted! 
-                    The GAN learned to make these tweaks automatically to convey 
+                    The GAN learned to make these tweaks from the data of climate change imagery on the web to convey 
                     the intent of climate change.
                 </p>
 
@@ -92,6 +96,13 @@
                         Divakaran, Ajay, Karan Sikka, Arijit Ray, Xiao Lin, and Yi Yao. "User targeted content generation using multimodal embeddings." U.S. Patent Application 17/191,698, filed September 23, 2021.
                     </a>
                 </p>
+                
+                <h2>Limitations and dangers</h2>
+                <p class="lead">
+                    We realize the potential dangers of such a technology since it can also be used for malicious intents. However, we hope that by raising awareness of the capabilities of such generative technology 
+                    and the potential harms, the community can have more conversations and make informed decisions.   
+                </p>
+                
 
                 <h2>Footnote</h2>
                 <p class="lead">
