@@ -767,27 +767,102 @@
         canvas.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;';
         document.body.insertBefore(canvas, document.body.firstChild);
         var ctx = canvas.getContext('2d');
-        function draw() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            var count = Math.floor((canvas.width * canvas.height) / 12000);
-            var colors = [
-                'rgba(200,140,120,0.40)',
-                'rgba(215,160,140,0.32)',
-                'rgba(180,120,105,0.38)',
-                'rgba(230,170,150,0.28)'
-            ];
-            for (var i = 0; i < count; i++) {
-                var x = Math.floor(Math.random() * canvas.width);
-                var y = Math.floor(Math.random() * canvas.height);
-                var size = Math.random() < 0.75 ? 3 : 4;
-                ctx.fillStyle = colors[Math.floor(Math.random() * colors.length)];
-                ctx.fillRect(x, y, size, size);
+
+        var clusterShapes = [
+            [[0,0],[1,0],[0,1],[1,1],[2,1]],
+            [[0,0],[1,0],[2,0],[1,1],[1,-1]],
+            [[0,0],[1,0],[0,1],[-1,1],[0,2]],
+            [[0,0],[1,0],[1,1],[2,1],[1,2]],
+            [[0,0],[0,1],[1,1],[0,2],[1,2]],
+            [[0,0],[1,0],[2,0],[0,1],[2,1]],
+            [[0,0],[-1,0],[0,1],[0,-1],[1,1]],
+            [[0,0],[1,0],[0,1],[1,1]],
+            [[0,0],[1,0],[2,0],[1,1]],
+            [[0,0],[0,1],[0,2],[1,1]],
+        ];
+
+        var baseColors = [[200,140,120],[215,155,135],[180,115,100],[225,165,145]];
+        var clusters = [];
+
+        function drawCluster(cx, cy, shape, color, px) {
+            cx = Math.floor(cx / px) * px;
+            cy = Math.floor(cy / px) * px;
+            ctx.fillStyle = color;
+            for (var i = 0; i < shape.length; i++) {
+                ctx.fillRect(cx + shape[i][0] * px, cy + shape[i][1] * px, px, px);
             }
         }
-        draw();
-        window.addEventListener('resize', draw);
+
+        function initClusters() {
+            clusters = [];
+            var marginLeft = (canvas.width - 1170) / 2;
+            if (marginLeft < 40) return;
+            var count = Math.floor((2 * marginLeft * canvas.height) / 30000);
+            for (var i = 0; i < count; i++) {
+                var onLeft = Math.random() < 0.5;
+                clusters.push({
+                    x: onLeft ? Math.random() * marginLeft : canvas.width - marginLeft + Math.random() * marginLeft,
+                    y: Math.random() * canvas.height,
+                    px: Math.random() < 0.5 ? 6 : 8,
+                    colorIdx: Math.floor(Math.random() * 4),
+                    shapeIdx: Math.floor(Math.random() * clusterShapes.length),
+                    nextShapeIdx: Math.floor(Math.random() * clusterShapes.length),
+                    phase: Math.random() * Math.PI * 2,
+                    pulseSpeed: 0.2 + Math.random() * 0.4,
+                    morphTimer: 1 + Math.random() * 3,
+                    morphInterval: 2 + Math.random() * 4,
+                    morphProgress: 1.0
+                });
+            }
+        }
+
+        var lastTime = 0;
+        function animate(time) {
+            var dt = Math.min((time - lastTime) / 1000, 0.1);
+            lastTime = time;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            for (var i = 0; i < clusters.length; i++) {
+                var c = clusters[i];
+                c.morphTimer -= dt;
+                if (c.morphTimer <= 0) {
+                    c.shapeIdx = c.nextShapeIdx;
+                    c.nextShapeIdx = Math.floor(Math.random() * clusterShapes.length);
+                    c.morphTimer = c.morphInterval;
+                    c.morphProgress = 0;
+                }
+                c.morphProgress = Math.min(c.morphProgress + dt * 1.5, 1.0);
+
+                var pulse = 0.18 + 0.10 * Math.sin(time / 1000 * c.pulseSpeed + c.phase);
+                var rgb = baseColors[c.colorIdx];
+
+                // draw outgoing shape fading out
+                if (c.morphProgress < 1.0) {
+                    var alphaOut = pulse * (1 - c.morphProgress);
+                    ctx.globalAlpha = alphaOut;
+                    drawCluster(c.x, c.y, clusterShapes[c.shapeIdx], 'rgb('+rgb[0]+','+rgb[1]+','+rgb[2]+')', c.px);
+                    var alphaIn = pulse * c.morphProgress;
+                    ctx.globalAlpha = alphaIn;
+                    drawCluster(c.x, c.y, clusterShapes[c.nextShapeIdx], 'rgb('+rgb[0]+','+rgb[1]+','+rgb[2]+')', c.px);
+                    ctx.globalAlpha = 1;
+                } else {
+                    ctx.globalAlpha = pulse;
+                    drawCluster(c.x, c.y, clusterShapes[c.shapeIdx], 'rgb('+rgb[0]+','+rgb[1]+','+rgb[2]+')', c.px);
+                    ctx.globalAlpha = 1;
+                }
+            }
+            requestAnimationFrame(animate);
+        }
+
+        function init() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            initClusters();
+        }
+
+        init();
+        window.addEventListener('resize', init);
+        requestAnimationFrame(animate);
     })();
     </script>
 
