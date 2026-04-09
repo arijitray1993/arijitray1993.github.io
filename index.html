@@ -86,7 +86,7 @@
                     </div>
                     <div class="col-md-6" id="about_me" >
                         <div class="row" style="padding-left: 5px;padding-right: 5px;">
-                            <p class="lead" align=justify>I wish to build intelligent tools that help humans achieve more in the physical and digital worlds.</h2>
+                            <p class="lead" align=justify>I aim to build intelligent tools that <span class="tooltip-word" data-tooltip="complement, not necessarily mimic— to help solve societally valuable tasks by automating the tedious parts.">complement*</span> human abilities.</h2>
                             
                                 <h2>About me:</h2>
                             <p class="lead-small" align=justify>
@@ -97,16 +97,20 @@
                             </p>
                             
                             <p class="lead-small" align=justify>
-                                I aim to advance visual and textual reasoning in AI agents. My research focuses on unsupervised 
-                                reasoning data generation using simulators and training paradigms that enable models to reason better about the world.
+                                I am fascinated by how humans accomplish remarkable things simply by observing their surroundings, 
+                                interacting with the visual world, and communicating through language. 
+                                Hence, my research aims to advance AI models’ capability to reason while visually interacting with an environment.
+
                                 <!--I deeply enjoy creating creative ecosystems and mentorship. As a (former) member of an  <a href="https://aiforimpact.github.io/">AI Venture Studio</a> at <a href="https://www.mit.edu/">MIT</a>, I helped host events that brought 
                                 practioners across mutliple verticals from 5 schools in the Boston area. -->
                             </p>
                             
                             <p class="lead-small" align=justify>
-                                I am passionate about building creative ecosystems that help people discover the access to the right networks.
+                                I also enjoy building creative ecosystems that help people discover the access to the right community.
                                 I have helped <a href="aix/index.html">start</a> and <a href="https://aiforimpact.github.io/">organize</a> networking events across five schools in the Boston area for conversations around how AI researchers can help practioners from diverse verticals. 
                             </p>
+
+                            
 
 
                             <!--<p class="lead-small", align=justify>If you are interested to collaborate or just chat about research on multimodal models and world models, say hi! </p> -->
@@ -771,54 +775,47 @@
         // shape families — clusters morph only between shapes within the same family
         // so transitions look like a smooth shift rather than a jump to a different motif
         var shapeFamilies = [
-            // family 0: round/oval blobs
+            // family 0: large round blobs
             [
-                [[1,0],[2,0],[3,0],[0,1],[1,1],[2,1],[3,1],[4,1],[0,2],[1,2],[2,2],[3,2],[4,2],[1,3],[2,3],[3,3]],
-                [[1,0],[2,0],[3,0],[0,1],[1,1],[2,1],[3,1],[4,1],[1,2],[2,2],[3,2]],
-                [[1,0],[2,0],[3,0],[4,0],[0,1],[1,1],[2,1],[3,1],[4,1],[5,1],[0,2],[1,2],[2,2],[3,2],[4,2],[5,2],[1,3],[2,3],[3,3],[4,3]],
-                [[1,0],[2,0],[0,1],[1,1],[2,1],[3,1],[0,2],[1,2],[2,2],[3,2],[1,3],[2,3]],
+                [[3,0],[4,0],[5,0],[6,0],[2,1],[3,1],[4,1],[5,1],[6,1],[7,1],[1,2],[2,2],[3,2],[4,2],[5,2],[6,2],[7,2],[8,2],[0,3],[1,3],[2,3],[3,3],[4,3],[5,3],[6,3],[7,3],[8,3],[9,3],[0,4],[1,4],[2,4],[3,4],[4,4],[5,4],[6,4],[7,4],[8,4],[9,4],[0,5],[1,5],[2,5],[3,5],[4,5],[5,5],[6,5],[7,5],[8,5],[9,5],[1,6],[2,6],[3,6],[4,6],[5,6],[6,6],[7,6],[8,6],[2,7],[3,7],[4,7],[5,7],[6,7],[7,7],[3,8],[4,8],[5,8],[6,8]],
+                [[3,0],[4,0],[5,0],[2,1],[3,1],[4,1],[5,1],[6,1],[7,1],[1,2],[2,2],[3,2],[4,2],[5,2],[6,2],[7,2],[8,2],[0,3],[1,3],[2,3],[3,3],[4,3],[5,3],[6,3],[7,3],[8,3],[0,4],[1,4],[2,4],[3,4],[4,4],[5,4],[6,4],[7,4],[8,4],[1,5],[2,5],[3,5],[4,5],[5,5],[6,5],[7,5],[2,6],[3,6],[4,6],[5,6],[6,6],[3,7],[4,7],[5,7]],
+                [[2,0],[3,0],[4,0],[5,0],[1,1],[2,1],[3,1],[4,1],[5,1],[6,1],[0,2],[1,2],[2,2],[3,2],[4,2],[5,2],[6,2],[7,2],[0,3],[1,3],[2,3],[3,3],[4,3],[5,3],[6,3],[7,3],[0,4],[1,4],[2,4],[3,4],[4,4],[5,4],[6,4],[7,4],[8,4],[1,5],[2,5],[3,5],[4,5],[5,5],[6,5],[7,5],[8,5],[2,6],[3,6],[4,6],[5,6],[6,6],[7,6],[3,7],[4,7],[5,7],[6,7]],
+                [[3,0],[4,0],[5,0],[6,0],[2,1],[3,1],[4,1],[5,1],[6,1],[7,1],[1,2],[2,2],[3,2],[4,2],[5,2],[6,2],[7,2],[8,2],[0,3],[1,3],[2,3],[3,3],[4,3],[5,3],[6,3],[7,3],[8,3],[0,4],[1,4],[2,4],[3,4],[4,4],[5,4],[6,4],[7,4],[8,4],[1,5],[2,5],[3,5],[4,5],[5,5],[6,5],[7,5],[2,6],[3,6],[4,6],[5,6],[6,6],[7,6],[3,7],[4,7],[5,7],[6,7],[4,8],[5,8]],
             ],
-            // family 1: diamonds / triangles
+            // family 1: wide oval blobs
             [
-                [[2,0],[1,1],[2,1],[3,1],[0,2],[1,2],[2,2],[3,2],[4,2],[1,3],[2,3],[3,3],[2,4]],
-                [[2,0],[1,1],[2,1],[3,1],[0,2],[1,2],[2,2],[3,2],[4,2]],
-                [[2,0],[2,1],[1,2],[2,2],[3,2],[0,3],[1,3],[2,3],[3,3],[4,3]],
-                [[2,0],[1,1],[2,1],[3,1],[1,2],[2,2],[3,2],[2,3]],
+                [[3,0],[4,0],[5,0],[6,0],[7,0],[8,0],[2,1],[3,1],[4,1],[5,1],[6,1],[7,1],[8,1],[9,1],[1,2],[2,2],[3,2],[4,2],[5,2],[6,2],[7,2],[8,2],[9,2],[10,2],[0,3],[1,3],[2,3],[3,3],[4,3],[5,3],[6,3],[7,3],[8,3],[9,3],[10,3],[11,3],[0,4],[1,4],[2,4],[3,4],[4,4],[5,4],[6,4],[7,4],[8,4],[9,4],[10,4],[11,4],[1,5],[2,5],[3,5],[4,5],[5,5],[6,5],[7,5],[8,5],[9,5],[10,5],[2,6],[3,6],[4,6],[5,6],[6,6],[7,6],[8,6],[9,6],[3,7],[4,7],[5,7],[6,7],[7,7],[8,7]],
+                [[4,0],[5,0],[6,0],[7,0],[3,1],[4,1],[5,1],[6,1],[7,1],[8,1],[2,2],[3,2],[4,2],[5,2],[6,2],[7,2],[8,2],[9,2],[10,2],[1,3],[2,3],[3,3],[4,3],[5,3],[6,3],[7,3],[8,3],[9,3],[10,3],[11,3],[1,4],[2,4],[3,4],[4,4],[5,4],[6,4],[7,4],[8,4],[9,4],[10,4],[11,4],[2,5],[3,5],[4,5],[5,5],[6,5],[7,5],[8,5],[9,5],[10,5],[3,6],[4,6],[5,6],[6,6],[7,6],[8,6],[9,6],[4,7],[5,7],[6,7],[7,7]],
+                [[3,0],[4,0],[5,0],[6,0],[7,0],[2,1],[3,1],[4,1],[5,1],[6,1],[7,1],[8,1],[9,1],[1,2],[2,2],[3,2],[4,2],[5,2],[6,2],[7,2],[8,2],[9,2],[10,2],[0,3],[1,3],[2,3],[3,3],[4,3],[5,3],[6,3],[7,3],[8,3],[9,3],[10,3],[0,4],[1,4],[2,4],[3,4],[4,4],[5,4],[6,4],[7,4],[8,4],[9,4],[10,4],[1,5],[2,5],[3,5],[4,5],[5,5],[6,5],[7,5],[8,5],[9,5],[2,6],[3,6],[4,6],[5,6],[6,6],[7,6],[8,6],[3,7],[4,7],[5,7],[6,7],[7,7]],
+                [[3,0],[4,0],[5,0],[6,0],[7,0],[8,0],[2,1],[3,1],[4,1],[5,1],[6,1],[7,1],[8,1],[9,1],[1,2],[2,2],[3,2],[4,2],[5,2],[6,2],[7,2],[8,2],[9,2],[10,2],[0,3],[1,3],[2,3],[3,3],[4,3],[5,3],[6,3],[7,3],[8,3],[9,3],[10,3],[11,3],[1,4],[2,4],[3,4],[4,4],[5,4],[6,4],[7,4],[8,4],[9,4],[10,4],[2,5],[3,5],[4,5],[5,5],[6,5],[7,5],[8,5],[9,5],[4,6],[5,6],[6,6],[7,6]],
             ],
-            // family 2: rings / hollow shapes
+            // family 2: tall blobs
             [
-                [[1,0],[2,0],[3,0],[0,1],[4,1],[0,2],[4,2],[0,3],[4,3],[1,4],[2,4],[3,4]],
-                [[1,0],[2,0],[3,0],[0,1],[4,1],[0,2],[4,2],[1,3],[2,3],[3,3]],
-                [[1,0],[2,0],[0,1],[3,1],[0,2],[3,2],[1,3],[2,3]],
-                [[1,0],[2,0],[3,0],[0,1],[2,1],[4,1],[0,2],[4,2],[1,3],[2,3],[3,3]],
+                [[2,0],[3,0],[4,0],[1,1],[2,1],[3,1],[4,1],[5,1],[0,2],[1,2],[2,2],[3,2],[4,2],[5,2],[6,2],[0,3],[1,3],[2,3],[3,3],[4,3],[5,3],[6,3],[0,4],[1,4],[2,4],[3,4],[4,4],[5,4],[6,4],[0,5],[1,5],[2,5],[3,5],[4,5],[5,5],[6,5],[7,5],[1,6],[2,6],[3,6],[4,6],[5,6],[6,6],[7,6],[1,7],[2,7],[3,7],[4,7],[5,7],[6,7],[2,8],[3,8],[4,8],[5,8],[3,9],[4,9]],
+                [[2,0],[3,0],[1,1],[2,1],[3,1],[4,1],[0,2],[1,2],[2,2],[3,2],[4,2],[5,2],[0,3],[1,3],[2,3],[3,3],[4,3],[5,3],[0,4],[1,4],[2,4],[3,4],[4,4],[5,4],[6,4],[0,5],[1,5],[2,5],[3,5],[4,5],[5,5],[6,5],[1,6],[2,6],[3,6],[4,6],[5,6],[2,7],[3,7],[4,7],[5,7],[3,8],[4,8]],
+                [[2,0],[3,0],[4,0],[1,1],[2,1],[3,1],[4,1],[5,1],[0,2],[1,2],[2,2],[3,2],[4,2],[5,2],[0,3],[1,3],[2,3],[3,3],[4,3],[5,3],[6,3],[0,4],[1,4],[2,4],[3,4],[4,4],[5,4],[6,4],[1,5],[2,5],[3,5],[4,5],[5,5],[6,5],[1,6],[2,6],[3,6],[4,6],[5,6],[2,7],[3,7],[4,7],[5,7],[2,8],[3,8],[4,8],[3,9]],
+                [[3,0],[4,0],[2,1],[3,1],[4,1],[5,1],[1,2],[2,2],[3,2],[4,2],[5,2],[6,2],[0,3],[1,3],[2,3],[3,3],[4,3],[5,3],[6,3],[0,4],[1,4],[2,4],[3,4],[4,4],[5,4],[6,4],[7,4],[1,5],[2,5],[3,5],[4,5],[5,5],[6,5],[7,5],[1,6],[2,6],[3,6],[4,6],[5,6],[6,6],[2,7],[3,7],[4,7],[5,7],[3,8],[4,8]],
             ],
-            // family 3: lines / linear strokes
+            // family 3: arcs / crescents
             [
-                [[0,0],[1,0],[2,0],[3,0],[4,0],[5,0],[6,0]],
-                [[0,0],[1,0],[2,0],[3,0],[4,0],[5,0]],
-                [[0,0],[1,0],[2,0],[3,0],[4,0],[4,1],[5,1],[6,1]],
-                [[0,0],[1,0],[2,0],[3,1],[4,1],[5,1],[6,1]],
+                [[3,0],[4,0],[5,0],[6,0],[7,0],[2,1],[3,1],[7,1],[8,1],[1,2],[2,2],[8,2],[9,2],[0,3],[1,3],[9,3],[10,3],[0,4],[1,4],[0,5],[1,5],[0,6],[1,6],[9,6],[10,6],[1,7],[2,7],[8,7],[9,7],[2,8],[3,8],[7,8],[8,8],[3,9],[4,9],[5,9],[6,9],[7,9]],
+                [[4,0],[5,0],[6,0],[7,0],[3,1],[4,1],[7,1],[8,1],[2,2],[3,2],[8,2],[9,2],[1,3],[2,3],[9,3],[10,3],[0,4],[1,4],[10,4],[0,5],[1,5],[10,5],[1,6],[2,6],[9,6],[10,6],[2,7],[3,7],[8,7],[9,7],[3,8],[4,8],[7,8],[8,8],[4,9],[5,9],[6,9],[7,9]],
+                [[3,0],[4,0],[5,0],[6,0],[7,0],[2,1],[3,1],[8,1],[1,2],[2,2],[0,3],[1,3],[0,4],[1,4],[0,5],[0,6],[1,6],[0,7],[1,7],[9,7],[1,8],[2,8],[8,8],[9,8],[2,9],[3,9],[7,9],[8,9],[3,10],[4,10],[5,10],[6,10],[7,10]],
+                [[4,0],[5,0],[6,0],[7,0],[3,1],[4,1],[8,1],[2,2],[3,2],[9,2],[1,3],[2,3],[9,3],[10,3],[0,4],[1,4],[10,4],[0,5],[1,5],[1,6],[2,6],[9,6],[10,6],[2,7],[3,7],[8,7],[9,7],[3,8],[7,8],[8,8],[4,9],[5,9],[6,9],[7,9]],
             ],
-            // family 4: zigzags / staircases
+            // family 4: chunky blobs
             [
-                [[0,0],[1,0],[1,1],[2,1],[2,2],[3,2],[3,3],[4,3],[4,4],[5,4]],
-                [[0,0],[1,0],[1,1],[2,1],[2,2],[3,2],[3,3],[4,3]],
-                [[0,0],[1,0],[2,0],[2,1],[2,2],[3,2],[4,2],[4,3],[4,4],[5,4]],
-                [[0,0],[1,1],[2,1],[3,2],[4,2],[5,3]],
+                [[2,0],[3,0],[4,0],[5,0],[6,0],[1,1],[2,1],[3,1],[4,1],[5,1],[6,1],[7,1],[0,2],[1,2],[2,2],[3,2],[4,2],[5,2],[6,2],[7,2],[8,2],[0,3],[1,3],[2,3],[3,3],[4,3],[5,3],[6,3],[7,3],[8,3],[9,3],[0,4],[1,4],[2,4],[3,4],[4,4],[5,4],[6,4],[7,4],[8,4],[9,4],[1,5],[2,5],[3,5],[4,5],[5,5],[6,5],[7,5],[8,5],[9,5],[2,6],[3,6],[4,6],[5,6],[6,6],[7,6],[8,6],[3,7],[4,7],[5,7],[6,7],[7,7]],
+                [[3,0],[4,0],[5,0],[6,0],[2,1],[3,1],[4,1],[5,1],[6,1],[7,1],[1,2],[2,2],[3,2],[4,2],[5,2],[6,2],[7,2],[8,2],[0,3],[1,3],[2,3],[3,3],[4,3],[5,3],[6,3],[7,3],[8,3],[9,3],[0,4],[1,4],[2,4],[3,4],[4,4],[5,4],[6,4],[7,4],[8,4],[9,4],[0,5],[1,5],[2,5],[3,5],[4,5],[5,5],[6,5],[7,5],[8,5],[1,6],[2,6],[3,6],[4,6],[5,6],[6,6],[7,6],[2,7],[3,7],[4,7],[5,7],[6,7]],
+                [[2,0],[3,0],[4,0],[5,0],[6,0],[7,0],[1,1],[2,1],[3,1],[4,1],[5,1],[6,1],[7,1],[8,1],[0,2],[1,2],[2,2],[3,2],[4,2],[5,2],[6,2],[7,2],[8,2],[0,3],[1,3],[2,3],[3,3],[4,3],[5,3],[6,3],[7,3],[8,3],[9,3],[1,4],[2,4],[3,4],[4,4],[5,4],[6,4],[7,4],[8,4],[9,4],[2,5],[3,5],[4,5],[5,5],[6,5],[7,5],[8,5],[3,6],[4,6],[5,6],[6,6],[7,6],[4,7],[5,7],[6,7]],
+                [[3,0],[4,0],[5,0],[6,0],[2,1],[3,1],[4,1],[5,1],[6,1],[7,1],[8,1],[1,2],[2,2],[3,2],[4,2],[5,2],[6,2],[7,2],[8,2],[0,3],[1,3],[2,3],[3,3],[4,3],[5,3],[6,3],[7,3],[8,3],[9,3],[0,4],[1,4],[2,4],[3,4],[4,4],[5,4],[6,4],[7,4],[8,4],[9,4],[1,5],[2,5],[3,5],[4,5],[5,5],[6,5],[7,5],[8,5],[2,6],[3,6],[4,6],[5,6],[6,6],[7,6],[8,6],[3,7],[4,7],[5,7],[6,7],[7,7]],
             ],
-            // family 5: plus / cross / X
+            // family 5: distant scattered stars
             [
-                [[2,0],[2,1],[0,2],[1,2],[2,2],[3,2],[4,2],[2,3],[2,4]],
-                [[2,0],[1,1],[2,1],[3,1],[0,2],[1,2],[2,2],[3,2],[4,2],[1,3],[2,3],[3,3],[2,4]],
-                [[0,0],[4,0],[1,1],[3,1],[2,2],[1,3],[3,3],[0,4],[4,4]],
-                [[2,0],[2,1],[2,2],[2,3],[2,4],[0,2],[1,2],[3,2],[4,2]],
-            ],
-            // family 6: scatter / splat
-            [
-                [[1,0],[3,0],[0,1],[2,1],[4,1],[1,2],[2,2],[3,2],[0,3],[2,3],[4,3],[1,4],[3,4]],
-                [[0,0],[3,0],[1,1],[5,1],[2,2],[4,2],[0,3],[3,3],[5,3],[2,4]],
-                [[1,0],[2,0],[0,1],[3,1],[4,1],[1,2],[2,2],[4,2],[0,3],[2,3],[3,3]],
-                [[0,0],[2,0],[4,0],[1,1],[3,1],[0,2],[2,2],[4,2],[1,3],[3,3]],
+                [[0,0],[8,1],[18,0],[4,4],[13,3],[22,2],[1,7],[10,6],[19,8],[6,10],[15,9],[24,10],[3,13],[12,12],[21,14],[0,16],[9,15],[17,16]],
+                [[3,0],[12,1],[21,0],[0,3],[7,4],[16,3],[24,2],[4,7],[11,6],[20,7],[2,10],[9,10],[18,9],[6,13],[14,12],[23,13],[1,16],[10,15],[19,16]],
+                [[5,0],[14,1],[23,0],[2,3],[9,4],[19,2],[0,6],[7,7],[16,6],[24,8],[4,10],[12,10],[21,11],[1,13],[8,13],[17,14],[6,16],[15,15],[22,16]],
+                [[1,1],[10,0],[20,1],[6,3],[15,4],[24,3],[3,6],[11,7],[22,6],[0,9],[8,10],[17,9],[5,12],[13,13],[23,12],[2,15],[9,16],[18,15],[24,16]],
             ],
         ];
 
@@ -836,13 +833,18 @@
 
         function makeCluster(marginLeft) {
             var onLeft = Math.random() < 0.5;
-            // small individual pixels; size variation comes from shape choice
             var sizeRoll = Math.random();
             var px;
-            if (sizeRoll < 0.5) px = 3;
-            else if (sizeRoll < 0.85) px = 4;
-            else px = 5;
-            var familyIdx = Math.floor(Math.random() * shapeFamilies.length);
+            if (sizeRoll < 0.5) px = 2;
+            else if (sizeRoll < 0.85) px = 3;
+            else px = 2.5;
+            // 40% chance of scattered stars (family 5), rest split evenly
+            var familyIdx;
+            if (Math.random() < 0.4) {
+                familyIdx = 5;
+            } else {
+                familyIdx = Math.floor(Math.random() * 5);
+            }
             var family = shapeFamilies[familyIdx];
             return {
                 x: onLeft ? Math.random() * marginLeft : canvas.width - marginLeft + Math.random() * marginLeft,
@@ -853,25 +855,29 @@
                 shapeIdx: Math.floor(Math.random() * family.length),
                 nextShapeIdx: Math.floor(Math.random() * family.length),
                 phase: Math.random() * Math.PI * 2,
+                twinklePhase: Math.random() * Math.PI * 2,
+                twinkleSpeed: 1.5 + Math.random() * 2.5,
                 pulseSpeed: 0.2 + Math.random() * 0.4,
-                morphTimer: 2 + Math.random() * 4,
-                morphInterval: 3 + Math.random() * 5,
+                morphTimer: 1 + Math.random() * 2,
+                morphInterval: 1.5 + Math.random() * 3,
                 morphProgress: 1.0,
                 // lifecycle: fade in -> visible -> fade out -> respawn
                 lifeState: 'in', // 'in', 'visible', 'out'
                 lifeProgress: 0,
-                fadeInDuration: 1.5 + Math.random() * 2,
-                visibleDuration: 4 + Math.random() * 8,
-                fadeOutDuration: 1.5 + Math.random() * 2,
+                fadeInDuration: 0.8 + Math.random() * 1.2,
+                visibleDuration: 2 + Math.random() * 5,
+                fadeOutDuration: 0.8 + Math.random() * 1.2,
                 maxOpacity: 0.45 + Math.random() * 0.25
             };
         }
 
         function initClusters() {
             clusters = [];
-            var marginLeft = (canvas.width - 1170) / 2;
-            if (marginLeft < 40) return;
+            var contentWidth = Math.min(1170, canvas.width * 0.75);
+            var marginLeft = (canvas.width - contentWidth) / 2;
+            if (marginLeft < 20) return;
             var count = Math.floor((2 * marginLeft * canvas.height) / 120000);
+            count = Math.max(count, 4);
             for (var i = 0; i < count; i++) {
                 var c = makeCluster(marginLeft);
                 // start staggered so they don't all appear at once
@@ -886,7 +892,8 @@
             var dt = Math.min((time - lastTime) / 1000, 0.1);
             lastTime = time;
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            var marginLeft = (canvas.width - 1170) / 2;
+            var cw = Math.min(1170, canvas.width * 0.75);
+            var marginLeft = (canvas.width - cw) / 2;
 
             for (var i = 0; i < clusters.length; i++) {
                 var c = clusters[i];
@@ -911,7 +918,7 @@
                     lifeAlpha = 1 - (c.lifeProgress / c.fadeOutDuration);
                     if (lifeAlpha <= 0) {
                         // respawn at new location
-                        if (marginLeft >= 40) {
+                        if (marginLeft >= 20) {
                             clusters[i] = makeCluster(marginLeft);
                             clusters[i].lifeState = 'in';
                             clusters[i].lifeProgress = 0;
@@ -934,7 +941,10 @@
                 var t = c.morphProgress;
                 var ease = t * t * (3 - 2 * t);
 
-                var pulse = c.maxOpacity * (0.75 + 0.25 * Math.sin(time / 1000 * c.pulseSpeed + c.phase)) * lifeAlpha;
+                // slow drift + fast twinkle spike
+                var drift = 0.65 + 0.35 * Math.sin(time / 1000 * c.pulseSpeed + c.phase);
+                var twinkle = Math.pow(Math.max(0, Math.sin(time / 1000 * c.twinkleSpeed + c.twinklePhase)), 3);
+                var pulse = c.maxOpacity * (drift * 0.7 + twinkle * 0.3) * lifeAlpha;
                 var rgb = baseColors[c.colorIdx];
                 var colorStr = 'rgb('+rgb[0]+','+rgb[1]+','+rgb[2]+')';
 
@@ -961,6 +971,47 @@
         init();
         window.addEventListener('resize', init);
         requestAnimationFrame(animate);
+    })();
+    </script>
+
+    <script>
+    (function() {
+        var popup = document.createElement('div');
+        popup.className = 'tooltip-popup';
+        document.body.appendChild(popup);
+        var activeWord = null;
+
+        function showPopup(word) {
+            var text = word.getAttribute('data-tooltip');
+            popup.textContent = text;
+            popup.classList.add('visible');
+            var rect = word.getBoundingClientRect();
+            var popupRect = popup.getBoundingClientRect();
+            var left = rect.left + rect.width / 2 - popupRect.width / 2;
+            var top = rect.top - popupRect.height - 10;
+            if (top < 4) top = rect.bottom + 10;
+            if (left < 4) left = 4;
+            if (left + popupRect.width > window.innerWidth - 4) left = window.innerWidth - popupRect.width - 4;
+            popup.style.left = left + 'px';
+            popup.style.top = top + 'px';
+            activeWord = word;
+        }
+
+        function hidePopup() {
+            popup.classList.remove('visible');
+            activeWord = null;
+        }
+
+        document.querySelectorAll('.tooltip-word').forEach(function(word) {
+            word.addEventListener('mouseenter', function() { showPopup(word); });
+            word.addEventListener('mouseleave', hidePopup);
+            word.addEventListener('click', function(e) {
+                e.stopPropagation();
+                if (activeWord === word) { hidePopup(); } else { showPopup(word); }
+            });
+        });
+
+        document.addEventListener('click', function() { if (activeWord) hidePopup(); });
     })();
     </script>
 
