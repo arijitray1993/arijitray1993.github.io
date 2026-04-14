@@ -86,7 +86,7 @@
                     </div>
                     <div class="col-md-6" id="about_me" >
                         <div class="row" style="padding-left: 5px;padding-right: 5px;">
-                            <p class="lead" align=justify>I aim to build intelligent tools that <span class="tooltip-word" data-tooltip="complement, not necessarily mimic— to help solve societally valuable tasks by automating the tedious parts.">complement*</span> human abilities.</h2>
+                            <p class="lead" align=justify>I aim to build intelligent tools that <span class="tooltip-word" data-tooltip="solve tasks at the intersection of valuable yet complex and tedious to humans">complement*</span> human abilities.</h2>
                             
                                 <h2>About me:</h2>
                             <p class="lead-small" align=justify>
@@ -838,12 +838,14 @@
             if (sizeRoll < 0.5) px = 2;
             else if (sizeRoll < 0.85) px = 3;
             else px = 2.5;
-            // 40% chance of scattered stars (family 5), rest split evenly
+            // favor scattered stars (family 5) and arcs (family 3), few solid blobs
+            var r = Math.random();
             var familyIdx;
-            if (Math.random() < 0.4) {
-                familyIdx = 5;
-            } else {
-                familyIdx = Math.floor(Math.random() * 5);
+            if (r < 0.45) familyIdx = 5;       // 45% scattered stars
+            else if (r < 0.80) familyIdx = 3;  // 35% arcs
+            else {
+                var blobFamilies = [0, 1, 2, 4];
+                familyIdx = blobFamilies[Math.floor(Math.random() * blobFamilies.length)]; // 20% solid blobs
             }
             var family = shapeFamilies[familyIdx];
             return {
