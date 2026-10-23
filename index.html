@@ -27,6 +27,11 @@
     <link href="css/responsive.css" rel="stylesheet">
 	
 	<link href="cover.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+    <link href="css/polish.css" rel="stylesheet">
 	
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
@@ -36,6 +41,13 @@
 </head><!--/head-->
 
 <body class="homepage">
+
+    <div class="ambient-bg" aria-hidden="true">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <div class="grain"></div>
+    </div>
 
     <div class="carousel slide" style="min-height: 100%; padding-top: 9%; padding-bottom: 12%;">        
         <div class="carousel-inner">
@@ -131,7 +143,7 @@
                                         <img src="images/ai2logo.png" class="img-rounded" alt="ai2" style="max-height: 40px; max-width: 100%;">
                                     </div>
                                     <div class="caption">
-                                        <p align="center" class="lead-small">Student Collaborator, Allen AI (PRIOR), 2024 - present</p>
+                                        <p align="center" class="lead-small">Student Collaborator, Allen AI (PRIOR), 2024–present</p>
                                     </div>
                                 </a>
                             </div>
@@ -214,7 +226,7 @@
                         <li class="lead-small">2026: I was recognized as an <a href="https://media.eventhosts.cc/Conferences/CVPR2026/CVPR_main_conf_2026_15.pdf"><b>Outstanding Reviewer</b></a> for CVPR 2026 (top 5%).</li>
                         <li class="lead-small">2025: Excited to spend my summer at <b>Google</b>, working with the <a href="https://l2ior.github.io/">Pixel team</a> and <a href="https://scholar.google.com/citations?hl=en&user=5JlEyTAAAAAJ&view_op=list_works">Leonidas Guibas</a> from Deepmind.</li>
                         <li class="lead-small">2024: Our <a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Zhang_Feedback-Guided_Autonomous_Driving_CVPR_2024_paper.pdf">paper</a> on feedback-guided autonomous driving got accepted to CVPR 2024 as a <b>highlight</b>. </li>
-                        <li class="lead-small">2023: One of my student's <a href="https://arxiv.org/abs/2308.16741">paper</a> on diverse reactions to multimodal content got accepted as an <b>oral</b> at an <a href="https://iccv23-wecia.github.io/">ICCV Workshop</a> 2023. </li>
+                        <li class="lead-small">2023: One of my student’s <a href="https://arxiv.org/abs/2308.16741">paper</a> on diverse reactions to multimodal content got accepted as an <b>oral</b> at an <a href="https://iccv23-wecia.github.io/">ICCV Workshop</a> 2023. </li>
                         <li class="lead-small">2022: Excited to be spending my summer as a Research Scientist Intern at <b>Meta (Facebook) AI</b> (FAIR), working on the compositionality of large vision-language models.</li>
                         <li class="lead-small">2022: I started a PhD; We started <b><a href="aix/index.html">[AI+X] of BU and Harvard</a></b>, where we brainstorm research/venture ideas on how AI can impact different verticals.</li>
                         <li class="lead-small">2019: I <b>won runners-up</b> at the SRI CVT Shark Tank Competition that supported my <b><a href="papers/persuade/persuade.html">mini-project on understanding image-text content</a></b> to reduce radicalization of opinions on social media.</li> 
@@ -237,6 +249,45 @@
                 <div class="publications-modern-wrapper">
                     <div class="publications-modern-section">
                         <h2 style="font-size:1.7em">Selected publications (<a target="_" href="https://scholar.google.com/citations?hl=en&user=7UgubNoAAAAJ&view_op=list_works&sortby=pubdate"><u>all</u></a>):</h2>
+                        <!-- 2026 -->
+                        <div class="pub-year-group">
+                            <h3 class="pub-year-header">2026</h3>
+
+                            <div class="pub-paper-card">
+                                <div class="pub-paper-thumbnail">
+                                    <img src="images/papers/ple_teaser.png" alt="PLE">
+                                </div>
+                                <div class="pub-paper-content">
+                                    <div class="pub-paper-authors">
+                                        <a href="https://rujunhan.github.io/">Rujun Han</a>,
+                                        <a href="https://evanzhuang.github.io/">Yufan Zhuang</a>,
+                                        <u>Arijit Ray</u>,
+                                        Han Yu,
+                                        Zoey CuiZhu,
+                                        George Lee,
+                                        <a href="https://alvinmingsf.github.io/">Yifei Ming</a>,
+                                        Binz Roy,
+                                        Varun Sakalkar,
+                                        Vishy Tirumalashetty,
+                                        Burak Gokturk,
+                                        <a href="https://tomas.pfister.fi/">Tomas Pfister</a>,
+                                        <a href="https://chl260.github.io/">Chen-Yu Lee</a>
+                                    </div>
+                                    <div class="pub-paper-title">PLE: Physical-Engineering’s Last Exam</div>
+                                    <div class="pub-paper-venue"><b>arXiv 2026</b></div>
+                                    <div class="pub-paper-links">
+                                        <a href="https://ple-bench.com/" class="pub-paper-link">Webpage</a>
+                                        <a href="https://arxiv.org/abs/2610.30537" class="pub-paper-link">arXiv</a>
+                                        <a href="https://github.com/google-research/ple" class="pub-paper-link">Code</a>
+                                        <a href="https://huggingface.co/datasets/physical-engineerings-last-exam/physical-engineerings-last-exam" class="pub-paper-link">Data</a>
+                                    </div>
+                                    <div class="pub-paper-tldr">
+                                        <strong>TL;DR:</strong> A real engineer-in-the-loop benchmark to test agents’ capability to design the physical world.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <!-- 2025 -->
                         <div class="pub-year-group">
                             <h3 class="pub-year-header">2025</h3>
@@ -326,8 +377,8 @@
                                         <a href="https://abhaybd.github.io/GraspMolmo/" class="pub-paper-link">Code</a>
                                     </div>
                                     <div class="pub-paper-tldr">
-                                        <strong>TL;DR:</strong> Use textual reasoning (e.g., one should grasp "handle" of cup to drink tea) and visual reasoning 
-                                        (e.g., in this image, the cup is grasped by the "handle")
+                                        <strong>TL;DR:</strong> Use textual reasoning (e.g., one should grasp “handle” of cup to drink tea) and visual reasoning 
+                                        (e.g., in this image, the cup is grasped by the “handle”)
                                         along with an object grasping dataset (data of 6 DOF arm positions to grasp objects) to 
                                         generate high-level task description (e.g., how should I grasp cup to drink tea?) to precise 6DOF grasp data.
                                     </div>
@@ -766,216 +817,7 @@
 
    
 
-    <script>
-    (function() {
-        var canvas = document.createElement('canvas');
-        canvas.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;';
-        document.body.insertBefore(canvas, document.body.firstChild);
-        var ctx = canvas.getContext('2d');
-
-        // shape families — clusters morph only between shapes within the same family
-        // so transitions look like a smooth shift rather than a jump to a different motif
-        var shapeFamilies = [
-            // family 0: large round blobs
-            [
-                [[3,0],[4,0],[5,0],[6,0],[2,1],[3,1],[4,1],[5,1],[6,1],[7,1],[1,2],[2,2],[3,2],[4,2],[5,2],[6,2],[7,2],[8,2],[0,3],[1,3],[2,3],[3,3],[4,3],[5,3],[6,3],[7,3],[8,3],[9,3],[0,4],[1,4],[2,4],[3,4],[4,4],[5,4],[6,4],[7,4],[8,4],[9,4],[0,5],[1,5],[2,5],[3,5],[4,5],[5,5],[6,5],[7,5],[8,5],[9,5],[1,6],[2,6],[3,6],[4,6],[5,6],[6,6],[7,6],[8,6],[2,7],[3,7],[4,7],[5,7],[6,7],[7,7],[3,8],[4,8],[5,8],[6,8]],
-                [[3,0],[4,0],[5,0],[2,1],[3,1],[4,1],[5,1],[6,1],[7,1],[1,2],[2,2],[3,2],[4,2],[5,2],[6,2],[7,2],[8,2],[0,3],[1,3],[2,3],[3,3],[4,3],[5,3],[6,3],[7,3],[8,3],[0,4],[1,4],[2,4],[3,4],[4,4],[5,4],[6,4],[7,4],[8,4],[1,5],[2,5],[3,5],[4,5],[5,5],[6,5],[7,5],[2,6],[3,6],[4,6],[5,6],[6,6],[3,7],[4,7],[5,7]],
-                [[2,0],[3,0],[4,0],[5,0],[1,1],[2,1],[3,1],[4,1],[5,1],[6,1],[0,2],[1,2],[2,2],[3,2],[4,2],[5,2],[6,2],[7,2],[0,3],[1,3],[2,3],[3,3],[4,3],[5,3],[6,3],[7,3],[0,4],[1,4],[2,4],[3,4],[4,4],[5,4],[6,4],[7,4],[8,4],[1,5],[2,5],[3,5],[4,5],[5,5],[6,5],[7,5],[8,5],[2,6],[3,6],[4,6],[5,6],[6,6],[7,6],[3,7],[4,7],[5,7],[6,7]],
-                [[3,0],[4,0],[5,0],[6,0],[2,1],[3,1],[4,1],[5,1],[6,1],[7,1],[1,2],[2,2],[3,2],[4,2],[5,2],[6,2],[7,2],[8,2],[0,3],[1,3],[2,3],[3,3],[4,3],[5,3],[6,3],[7,3],[8,3],[0,4],[1,4],[2,4],[3,4],[4,4],[5,4],[6,4],[7,4],[8,4],[1,5],[2,5],[3,5],[4,5],[5,5],[6,5],[7,5],[2,6],[3,6],[4,6],[5,6],[6,6],[7,6],[3,7],[4,7],[5,7],[6,7],[4,8],[5,8]],
-            ],
-            // family 1: wide oval blobs
-            [
-                [[3,0],[4,0],[5,0],[6,0],[7,0],[8,0],[2,1],[3,1],[4,1],[5,1],[6,1],[7,1],[8,1],[9,1],[1,2],[2,2],[3,2],[4,2],[5,2],[6,2],[7,2],[8,2],[9,2],[10,2],[0,3],[1,3],[2,3],[3,3],[4,3],[5,3],[6,3],[7,3],[8,3],[9,3],[10,3],[11,3],[0,4],[1,4],[2,4],[3,4],[4,4],[5,4],[6,4],[7,4],[8,4],[9,4],[10,4],[11,4],[1,5],[2,5],[3,5],[4,5],[5,5],[6,5],[7,5],[8,5],[9,5],[10,5],[2,6],[3,6],[4,6],[5,6],[6,6],[7,6],[8,6],[9,6],[3,7],[4,7],[5,7],[6,7],[7,7],[8,7]],
-                [[4,0],[5,0],[6,0],[7,0],[3,1],[4,1],[5,1],[6,1],[7,1],[8,1],[2,2],[3,2],[4,2],[5,2],[6,2],[7,2],[8,2],[9,2],[10,2],[1,3],[2,3],[3,3],[4,3],[5,3],[6,3],[7,3],[8,3],[9,3],[10,3],[11,3],[1,4],[2,4],[3,4],[4,4],[5,4],[6,4],[7,4],[8,4],[9,4],[10,4],[11,4],[2,5],[3,5],[4,5],[5,5],[6,5],[7,5],[8,5],[9,5],[10,5],[3,6],[4,6],[5,6],[6,6],[7,6],[8,6],[9,6],[4,7],[5,7],[6,7],[7,7]],
-                [[3,0],[4,0],[5,0],[6,0],[7,0],[2,1],[3,1],[4,1],[5,1],[6,1],[7,1],[8,1],[9,1],[1,2],[2,2],[3,2],[4,2],[5,2],[6,2],[7,2],[8,2],[9,2],[10,2],[0,3],[1,3],[2,3],[3,3],[4,3],[5,3],[6,3],[7,3],[8,3],[9,3],[10,3],[0,4],[1,4],[2,4],[3,4],[4,4],[5,4],[6,4],[7,4],[8,4],[9,4],[10,4],[1,5],[2,5],[3,5],[4,5],[5,5],[6,5],[7,5],[8,5],[9,5],[2,6],[3,6],[4,6],[5,6],[6,6],[7,6],[8,6],[3,7],[4,7],[5,7],[6,7],[7,7]],
-                [[3,0],[4,0],[5,0],[6,0],[7,0],[8,0],[2,1],[3,1],[4,1],[5,1],[6,1],[7,1],[8,1],[9,1],[1,2],[2,2],[3,2],[4,2],[5,2],[6,2],[7,2],[8,2],[9,2],[10,2],[0,3],[1,3],[2,3],[3,3],[4,3],[5,3],[6,3],[7,3],[8,3],[9,3],[10,3],[11,3],[1,4],[2,4],[3,4],[4,4],[5,4],[6,4],[7,4],[8,4],[9,4],[10,4],[2,5],[3,5],[4,5],[5,5],[6,5],[7,5],[8,5],[9,5],[4,6],[5,6],[6,6],[7,6]],
-            ],
-            // family 2: tall blobs
-            [
-                [[2,0],[3,0],[4,0],[1,1],[2,1],[3,1],[4,1],[5,1],[0,2],[1,2],[2,2],[3,2],[4,2],[5,2],[6,2],[0,3],[1,3],[2,3],[3,3],[4,3],[5,3],[6,3],[0,4],[1,4],[2,4],[3,4],[4,4],[5,4],[6,4],[0,5],[1,5],[2,5],[3,5],[4,5],[5,5],[6,5],[7,5],[1,6],[2,6],[3,6],[4,6],[5,6],[6,6],[7,6],[1,7],[2,7],[3,7],[4,7],[5,7],[6,7],[2,8],[3,8],[4,8],[5,8],[3,9],[4,9]],
-                [[2,0],[3,0],[1,1],[2,1],[3,1],[4,1],[0,2],[1,2],[2,2],[3,2],[4,2],[5,2],[0,3],[1,3],[2,3],[3,3],[4,3],[5,3],[0,4],[1,4],[2,4],[3,4],[4,4],[5,4],[6,4],[0,5],[1,5],[2,5],[3,5],[4,5],[5,5],[6,5],[1,6],[2,6],[3,6],[4,6],[5,6],[2,7],[3,7],[4,7],[5,7],[3,8],[4,8]],
-                [[2,0],[3,0],[4,0],[1,1],[2,1],[3,1],[4,1],[5,1],[0,2],[1,2],[2,2],[3,2],[4,2],[5,2],[0,3],[1,3],[2,3],[3,3],[4,3],[5,3],[6,3],[0,4],[1,4],[2,4],[3,4],[4,4],[5,4],[6,4],[1,5],[2,5],[3,5],[4,5],[5,5],[6,5],[1,6],[2,6],[3,6],[4,6],[5,6],[2,7],[3,7],[4,7],[5,7],[2,8],[3,8],[4,8],[3,9]],
-                [[3,0],[4,0],[2,1],[3,1],[4,1],[5,1],[1,2],[2,2],[3,2],[4,2],[5,2],[6,2],[0,3],[1,3],[2,3],[3,3],[4,3],[5,3],[6,3],[0,4],[1,4],[2,4],[3,4],[4,4],[5,4],[6,4],[7,4],[1,5],[2,5],[3,5],[4,5],[5,5],[6,5],[7,5],[1,6],[2,6],[3,6],[4,6],[5,6],[6,6],[2,7],[3,7],[4,7],[5,7],[3,8],[4,8]],
-            ],
-            // family 3: arcs / crescents
-            [
-                [[3,0],[4,0],[5,0],[6,0],[7,0],[2,1],[3,1],[7,1],[8,1],[1,2],[2,2],[8,2],[9,2],[0,3],[1,3],[9,3],[10,3],[0,4],[1,4],[0,5],[1,5],[0,6],[1,6],[9,6],[10,6],[1,7],[2,7],[8,7],[9,7],[2,8],[3,8],[7,8],[8,8],[3,9],[4,9],[5,9],[6,9],[7,9]],
-                [[4,0],[5,0],[6,0],[7,0],[3,1],[4,1],[7,1],[8,1],[2,2],[3,2],[8,2],[9,2],[1,3],[2,3],[9,3],[10,3],[0,4],[1,4],[10,4],[0,5],[1,5],[10,5],[1,6],[2,6],[9,6],[10,6],[2,7],[3,7],[8,7],[9,7],[3,8],[4,8],[7,8],[8,8],[4,9],[5,9],[6,9],[7,9]],
-                [[3,0],[4,0],[5,0],[6,0],[7,0],[2,1],[3,1],[8,1],[1,2],[2,2],[0,3],[1,3],[0,4],[1,4],[0,5],[0,6],[1,6],[0,7],[1,7],[9,7],[1,8],[2,8],[8,8],[9,8],[2,9],[3,9],[7,9],[8,9],[3,10],[4,10],[5,10],[6,10],[7,10]],
-                [[4,0],[5,0],[6,0],[7,0],[3,1],[4,1],[8,1],[2,2],[3,2],[9,2],[1,3],[2,3],[9,3],[10,3],[0,4],[1,4],[10,4],[0,5],[1,5],[1,6],[2,6],[9,6],[10,6],[2,7],[3,7],[8,7],[9,7],[3,8],[7,8],[8,8],[4,9],[5,9],[6,9],[7,9]],
-            ],
-            // family 4: chunky blobs
-            [
-                [[2,0],[3,0],[4,0],[5,0],[6,0],[1,1],[2,1],[3,1],[4,1],[5,1],[6,1],[7,1],[0,2],[1,2],[2,2],[3,2],[4,2],[5,2],[6,2],[7,2],[8,2],[0,3],[1,3],[2,3],[3,3],[4,3],[5,3],[6,3],[7,3],[8,3],[9,3],[0,4],[1,4],[2,4],[3,4],[4,4],[5,4],[6,4],[7,4],[8,4],[9,4],[1,5],[2,5],[3,5],[4,5],[5,5],[6,5],[7,5],[8,5],[9,5],[2,6],[3,6],[4,6],[5,6],[6,6],[7,6],[8,6],[3,7],[4,7],[5,7],[6,7],[7,7]],
-                [[3,0],[4,0],[5,0],[6,0],[2,1],[3,1],[4,1],[5,1],[6,1],[7,1],[1,2],[2,2],[3,2],[4,2],[5,2],[6,2],[7,2],[8,2],[0,3],[1,3],[2,3],[3,3],[4,3],[5,3],[6,3],[7,3],[8,3],[9,3],[0,4],[1,4],[2,4],[3,4],[4,4],[5,4],[6,4],[7,4],[8,4],[9,4],[0,5],[1,5],[2,5],[3,5],[4,5],[5,5],[6,5],[7,5],[8,5],[1,6],[2,6],[3,6],[4,6],[5,6],[6,6],[7,6],[2,7],[3,7],[4,7],[5,7],[6,7]],
-                [[2,0],[3,0],[4,0],[5,0],[6,0],[7,0],[1,1],[2,1],[3,1],[4,1],[5,1],[6,1],[7,1],[8,1],[0,2],[1,2],[2,2],[3,2],[4,2],[5,2],[6,2],[7,2],[8,2],[0,3],[1,3],[2,3],[3,3],[4,3],[5,3],[6,3],[7,3],[8,3],[9,3],[1,4],[2,4],[3,4],[4,4],[5,4],[6,4],[7,4],[8,4],[9,4],[2,5],[3,5],[4,5],[5,5],[6,5],[7,5],[8,5],[3,6],[4,6],[5,6],[6,6],[7,6],[4,7],[5,7],[6,7]],
-                [[3,0],[4,0],[5,0],[6,0],[2,1],[3,1],[4,1],[5,1],[6,1],[7,1],[8,1],[1,2],[2,2],[3,2],[4,2],[5,2],[6,2],[7,2],[8,2],[0,3],[1,3],[2,3],[3,3],[4,3],[5,3],[6,3],[7,3],[8,3],[9,3],[0,4],[1,4],[2,4],[3,4],[4,4],[5,4],[6,4],[7,4],[8,4],[9,4],[1,5],[2,5],[3,5],[4,5],[5,5],[6,5],[7,5],[8,5],[2,6],[3,6],[4,6],[5,6],[6,6],[7,6],[8,6],[3,7],[4,7],[5,7],[6,7],[7,7]],
-            ],
-            // family 5: distant scattered stars
-            [
-                [[0,0],[8,1],[18,0],[4,4],[13,3],[22,2],[1,7],[10,6],[19,8],[6,10],[15,9],[24,10],[3,13],[12,12],[21,14],[0,16],[9,15],[17,16]],
-                [[3,0],[12,1],[21,0],[0,3],[7,4],[16,3],[24,2],[4,7],[11,6],[20,7],[2,10],[9,10],[18,9],[6,13],[14,12],[23,13],[1,16],[10,15],[19,16]],
-                [[5,0],[14,1],[23,0],[2,3],[9,4],[19,2],[0,6],[7,7],[16,6],[24,8],[4,10],[12,10],[21,11],[1,13],[8,13],[17,14],[6,16],[15,15],[22,16]],
-                [[1,1],[10,0],[20,1],[6,3],[15,4],[24,3],[3,6],[11,7],[22,6],[0,9],[8,10],[17,9],[5,12],[13,13],[23,12],[2,15],[9,16],[18,15],[24,16]],
-            ],
-        ];
-
-        var baseColors = [[150,85,65],[170,95,70],[130,70,55],[185,110,80],[110,60,50]];
-        var clusters = [];
-
-        function drawCluster(cx, cy, shape, color, px) {
-            cx = Math.floor(cx / px) * px;
-            cy = Math.floor(cy / px) * px;
-            ctx.fillStyle = color;
-            for (var i = 0; i < shape.length; i++) {
-                ctx.fillRect(cx + shape[i][0] * px, cy + shape[i][1] * px, px, px);
-            }
-        }
-
-        function makeCluster(marginLeft) {
-            var onLeft = Math.random() < 0.5;
-            var sizeRoll = Math.random();
-            var px;
-            if (sizeRoll < 0.5) px = 2;
-            else if (sizeRoll < 0.85) px = 3;
-            else px = 2.5;
-            // favor scattered stars (family 5) and arcs (family 3), few solid blobs
-            var r = Math.random();
-            var familyIdx;
-            if (r < 0.45) familyIdx = 5;       // 45% scattered stars
-            else if (r < 0.80) familyIdx = 3;  // 35% arcs
-            else {
-                var blobFamilies = [0, 1, 2, 4];
-                familyIdx = blobFamilies[Math.floor(Math.random() * blobFamilies.length)]; // 20% solid blobs
-            }
-            var family = shapeFamilies[familyIdx];
-            return {
-                x: onLeft ? Math.random() * marginLeft : canvas.width - marginLeft + Math.random() * marginLeft,
-                y: Math.random() * canvas.height,
-                px: px,
-                colorIdx: Math.floor(Math.random() * baseColors.length),
-                familyIdx: familyIdx,
-                shapeIdx: Math.floor(Math.random() * family.length),
-                nextShapeIdx: Math.floor(Math.random() * family.length),
-                phase: Math.random() * Math.PI * 2,
-                twinklePhase: Math.random() * Math.PI * 2,
-                twinkleSpeed: 1.5 + Math.random() * 2.5,
-                pulseSpeed: 0.2 + Math.random() * 0.4,
-                morphTimer: 1 + Math.random() * 2,
-                morphInterval: 1.5 + Math.random() * 3,
-                morphProgress: 1.0,
-                // lifecycle: fade in -> visible -> fade out -> respawn
-                lifeState: 'in', // 'in', 'visible', 'out'
-                lifeProgress: 0,
-                fadeInDuration: 0.8 + Math.random() * 1.2,
-                visibleDuration: 2 + Math.random() * 5,
-                fadeOutDuration: 0.8 + Math.random() * 1.2,
-                maxOpacity: 0.45 + Math.random() * 0.25
-            };
-        }
-
-        function initClusters() {
-            clusters = [];
-            var contentWidth = Math.min(1170, canvas.width * 0.75);
-            var marginLeft = (canvas.width - contentWidth) / 2;
-            if (marginLeft < 20) return;
-            var count = Math.floor((2 * marginLeft * canvas.height) / 120000);
-            count = Math.max(count, 4);
-            for (var i = 0; i < count; i++) {
-                var c = makeCluster(marginLeft);
-                // start staggered so they don't all appear at once
-                c.lifeState = Math.random() < 0.5 ? 'visible' : 'in';
-                c.lifeProgress = Math.random() * (c.lifeState === 'visible' ? c.visibleDuration : c.fadeInDuration);
-                clusters.push(c);
-            }
-        }
-
-        var lastTime = 0;
-        function animate(time) {
-            var dt = Math.min((time - lastTime) / 1000, 0.1);
-            lastTime = time;
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            var cw = Math.min(1170, canvas.width * 0.75);
-            var marginLeft = (canvas.width - cw) / 2;
-
-            for (var i = 0; i < clusters.length; i++) {
-                var c = clusters[i];
-
-                // lifecycle update
-                c.lifeProgress += dt;
-                var lifeAlpha = 1;
-                if (c.lifeState === 'in') {
-                    lifeAlpha = c.lifeProgress / c.fadeInDuration;
-                    if (lifeAlpha >= 1) {
-                        lifeAlpha = 1;
-                        c.lifeState = 'visible';
-                        c.lifeProgress = 0;
-                    }
-                } else if (c.lifeState === 'visible') {
-                    lifeAlpha = 1;
-                    if (c.lifeProgress >= c.visibleDuration) {
-                        c.lifeState = 'out';
-                        c.lifeProgress = 0;
-                    }
-                } else if (c.lifeState === 'out') {
-                    lifeAlpha = 1 - (c.lifeProgress / c.fadeOutDuration);
-                    if (lifeAlpha <= 0) {
-                        // respawn at new location
-                        if (marginLeft >= 20) {
-                            clusters[i] = makeCluster(marginLeft);
-                            clusters[i].lifeState = 'in';
-                            clusters[i].lifeProgress = 0;
-                        }
-                        continue;
-                    }
-                }
-
-                var family = shapeFamilies[c.familyIdx];
-                c.morphTimer -= dt;
-                if (c.morphTimer <= 0) {
-                    c.shapeIdx = c.nextShapeIdx;
-                    c.nextShapeIdx = Math.floor(Math.random() * family.length);
-                    c.morphTimer = c.morphInterval;
-                    c.morphProgress = 0;
-                }
-                // slower crossfade (was 1.5 -> ~0.66s; now 0.5 -> 2s)
-                c.morphProgress = Math.min(c.morphProgress + dt * 0.5, 1.0);
-                // ease the crossfade for smoother visual
-                var t = c.morphProgress;
-                var ease = t * t * (3 - 2 * t);
-
-                // slow drift + fast twinkle spike
-                var drift = 0.65 + 0.35 * Math.sin(time / 1000 * c.pulseSpeed + c.phase);
-                var twinkle = Math.pow(Math.max(0, Math.sin(time / 1000 * c.twinkleSpeed + c.twinklePhase)), 3);
-                var pulse = c.maxOpacity * (drift * 0.7 + twinkle * 0.3) * lifeAlpha;
-                var rgb = baseColors[c.colorIdx];
-                var colorStr = 'rgb('+rgb[0]+','+rgb[1]+','+rgb[2]+')';
-
-                if (c.morphProgress < 1.0) {
-                    ctx.globalAlpha = pulse * (1 - ease);
-                    drawCluster(c.x, c.y, family[c.shapeIdx], colorStr, c.px);
-                    ctx.globalAlpha = pulse * ease;
-                    drawCluster(c.x, c.y, family[c.nextShapeIdx], colorStr, c.px);
-                } else {
-                    ctx.globalAlpha = pulse;
-                    drawCluster(c.x, c.y, family[c.shapeIdx], colorStr, c.px);
-                }
-                ctx.globalAlpha = 1;
-            }
-            requestAnimationFrame(animate);
-        }
-
-        function init() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            initClusters();
-        }
-
-        init();
-        window.addEventListener('resize', init);
-        requestAnimationFrame(animate);
-    })();
-    </script>
+    <!-- Ambient background is pure CSS now (see css/polish.css) -->
 
     <script>
     (function() {

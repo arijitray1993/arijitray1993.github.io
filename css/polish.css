@@ -1,0 +1,328 @@
+/* ==========================================================================
+   Polish layer: typography, color and ambient background.
+   Loaded after main.css / cover.css so it overrides them without editing them.
+   Remove the <link> to this file in index.html to revert.
+   ========================================================================== */
+
+:root {
+  /* Fonts: Titillium Web ships 300 / 400 / 600 (loaded in index.html) */
+  --font-display: 'Titillium Web', 'Segoe UI', sans-serif;
+  --font-body: 'Titillium Web', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* Type scale (rem so the reader's browser size still applies) */
+  --text-caption: 0.8125rem;  /* 13px  logo captions */
+  --text-meta: 0.9375rem;     /* 15px  authors, venue, TL;DR */
+  --text-body: 1.0625rem;     /* 17px  paragraphs, lists */
+  --text-title: 1.125rem;     /* 18px  paper titles */
+  --text-subhead: 1.25rem;    /* 20px  About me, year labels */
+  --text-heading: 1.5rem;     /* 24px  section titles */
+  --text-lead: 1.5rem;        /* 24px  tagline */
+
+  /* One warm neutral ramp + one accent (contrast measured on the cream page / cards) */
+  --color-text-strong: #2e231c; /* headings         14.0:1 */
+  --color-text: #3a2e26;        /* body             12.1:1 */
+  --color-text-muted: #6b5d52;  /* secondary text    5.8:1 */
+  --color-accent: #c52d2f;      /* your name, venues 5.4:1 */
+
+  /* Legacy aliases */
+  --ink: var(--color-text);
+  --ink-soft: var(--color-text-muted);
+  --accent: var(--color-accent);
+  --plum: var(--color-text-strong);
+}
+
+/* ---------- Base typography ---------- */
+
+/* Bootstrap sets html { font-size: 62.5% } (1rem = 10px); nothing here relies on it.
+   Restore the browser default so 1rem = 16px and user font settings apply. */
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Only 600 is loaded for bold; avoid synthesized 700 */
+b, strong {
+  font-weight: 600;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: var(--color-text-strong);
+  text-wrap: balance;
+}
+
+/* main.css forces Trebuchet + 30px margin on every h2 with !important */
+h2 {
+  font-family: var(--font-display) !important;
+  font-weight: 600 !important;
+  color: var(--color-text-strong) !important;
+}
+
+/* Section titles ("Selected Highlights", "Selected publications", ...) */
+.container h2[style*="1.7em"] {
+  font-weight: 400 !important;
+  font-size: var(--text-heading) !important;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.125rem !important;
+}
+
+/* h3 is used for paragraph-like content (highlights list, hobbies) */
+.container h3,
+.feature-wrap h3 {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
+/* Highlights list: match the full width of the following sections */
+.container h3 > ul {
+  padding-left: 1.25rem;
+}
+
+.container h3 > ul > li {
+  margin-bottom: 0.25rem;
+  text-wrap: pretty;
+}
+
+p, li {
+  text-wrap: pretty;
+}
+
+.lead,
+.lead-small {
+  font-family: var(--font-body);
+  color: var(--color-text);
+}
+
+.lead {
+  font-size: var(--text-lead);
+  font-weight: 300;
+  line-height: 1.4;
+  color: var(--color-text-strong);
+  text-align: left !important;
+  text-wrap: balance;
+}
+
+.lead-small {
+  font-size: var(--text-body);
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+a {
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: from-font;
+}
+
+/* ---------- Hero / About me ---------- */
+
+/* Hero fits a 14" MacBook viewport (~1512x860) */
+body > .carousel.slide {
+  padding-top: 5% !important;
+  padding-bottom: 4% !important;
+}
+
+#about_me p[align="justify"] {
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
+#about_me h2 {
+  font-size: var(--text-subhead) !important;
+  font-weight: 600 !important;
+  line-height: 1.3;
+  margin-top: 18px !important;
+  margin-bottom: 6px !important;
+}
+
+#about_me .lead-small {
+  margin-bottom: 8px;
+}
+
+/* Affiliation logos: smaller, tighter */
+#about_me .col-md-6[align="center"] > a > div:first-child {
+  height: 36px !important;
+  margin-bottom: 4px !important;
+}
+
+#about_me .col-md-6[align="center"] img {
+  max-height: 26px !important;
+}
+
+#about_me .col-md-6[align="center"] img[alt="meta_ai_fair"] {
+  max-height: 16px !important;
+}
+
+#about_me .col-md-6[align="center"] .caption p {
+  font-size: var(--text-caption);
+  line-height: 1.4;
+  color: var(--color-text-muted);
+  margin-bottom: 0;
+}
+
+#about_me > .row[style*="margin-top"] {
+  margin-top: 8px !important;
+}
+
+/* Typewriter name / title */
+.animate {
+  font-family: var(--font-mono) !important;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--color-text-strong);
+}
+
+/* ---------- Publications ---------- */
+
+.publications-modern-wrapper {
+  font-family: var(--font-body);
+}
+
+.publications-modern-section .pub-year-header {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--text-subhead);
+  line-height: 1.3;
+  color: var(--color-text-strong);
+  margin-bottom: 1.125rem;
+}
+
+.publications-modern-section .pub-paper-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--text-title);
+  line-height: 1.3;
+  color: var(--color-text-strong);
+  text-wrap: balance;
+}
+
+.publications-modern-section .pub-paper-authors {
+  font-size: var(--text-meta);
+  line-height: 1.5;
+  color: var(--color-text-muted);
+}
+
+/* Linked and unlinked co-authors look identical */
+.publications-modern-section .pub-paper-authors a {
+  color: inherit;
+}
+
+.publications-modern-section .pub-paper-authors a:hover {
+  color: var(--color-accent);
+}
+
+.publications-modern-section .pub-paper-authors u {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.publications-modern-section .pub-paper-venue {
+  font-size: var(--text-meta);
+  color: var(--color-text-muted);
+}
+
+.publications-modern-section .pub-paper-venue a {
+  color: var(--color-accent);
+}
+
+.publications-modern-section .pub-paper-link {
+  font-weight: 400;
+  font-size: 0.875rem;
+}
+
+.publications-modern-section .pub-paper-tldr {
+  font-size: var(--text-meta);
+  line-height: 1.55;
+  color: var(--color-text);
+  text-wrap: pretty;
+}
+
+.publications-modern-section .pub-paper-tldr strong {
+  color: var(--color-text-strong);
+}
+
+/* ---------- Ambient background ---------- */
+
+.ambient-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.ambient-bg .blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.45;
+  will-change: transform;
+}
+
+.ambient-bg .blob-1 {
+  width: 55vmax;
+  height: 55vmax;
+  top: -18vmax;
+  left: -15vmax;
+  background: radial-gradient(circle at 30% 30%, #f6c9b8 0%, rgba(246, 201, 184, 0) 70%);
+  animation: drift-1 48s ease-in-out infinite alternate;
+}
+
+.ambient-bg .blob-2 {
+  width: 45vmax;
+  height: 45vmax;
+  bottom: -15vmax;
+  right: -12vmax;
+  background: radial-gradient(circle at 60% 60%, #d9c8ec 0%, rgba(217, 200, 236, 0) 70%);
+  animation: drift-2 60s ease-in-out infinite alternate;
+}
+
+.ambient-bg .blob-3 {
+  width: 30vmax;
+  height: 30vmax;
+  top: 40%;
+  left: 55%;
+  background: radial-gradient(circle, rgba(197, 45, 47, 0.18) 0%, rgba(197, 45, 47, 0) 70%);
+  animation: drift-3 54s ease-in-out infinite alternate;
+}
+
+/* Fine film grain to keep gradients from looking flat / banded */
+.ambient-bg .grain {
+  position: absolute;
+  inset: -50%;
+  opacity: 0.06;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  mix-blend-mode: multiply;
+}
+
+@keyframes drift-1 {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  100% { transform: translate3d(12vw, 8vh, 0) scale(1.12); }
+}
+
+@keyframes drift-2 {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  100% { transform: translate3d(-10vw, -10vh, 0) scale(1.08); }
+}
+
+@keyframes drift-3 {
+  0%   { transform: translate3d(0, 0, 0) scale(0.9); }
+  100% { transform: translate3d(-18vw, 6vh, 0) scale(1.15); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ambient-bg .blob { animation: none; }
+}
