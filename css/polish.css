@@ -111,8 +111,6 @@ p, li {
   font-weight: 300;
   line-height: 1.4;
   color: var(--color-text-strong);
-  text-align: left !important;
-  text-wrap: balance;
 }
 
 .lead-small {
